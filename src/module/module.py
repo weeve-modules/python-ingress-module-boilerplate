@@ -1,6 +1,6 @@
 """
 This file implements module's main logic.
-Data processing should happen here.
+Data inputting should happen here.
 
 Edit this file to implement your module.
 """
