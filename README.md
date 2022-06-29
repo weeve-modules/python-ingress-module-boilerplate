@@ -1,4 +1,4 @@
-# Python Ingress Module Boilerplate
+# bluetooth-ingress
 
 
 |              |                                                            |
@@ -29,7 +29,7 @@
 
 ***
 
-## Description 
+## Description
 
 This is a Python Ingress Boilerplate module and it serves as a starting point for developers to build ingress modules for weeve platform and data services.
 Navigate to [As a module developer](#as-a-module-developer) to learn how to use this module.
@@ -134,7 +134,7 @@ A module developer needs to add all the configuration and business logic.
         "OUTPUT_LABEL": env("OUTPUT_LABEL", "temperature"),
         "OUTPUT_UNIT": env("OUTPUT_UNIT", "Celsius"),
     }
- ``` 
+ ```
 
 ### Business Logic
 
@@ -166,7 +166,7 @@ Output of this module is JSON body:
     "<MODULE_NAME>Time": timestamp
 }
 ```
- 
+
 * Here `OUTPUT_LABEL` and `OUTPUT_UNIT` are specified at the module creation and `Processed data` is data processed by Module Main function.
 * However this could be modified in `image/src/weeve/egress.py`
 
@@ -178,7 +178,7 @@ Output of this module is JSON body:
 1. `.devcontiner` directory has all the information about that.
 2. Installs all the dependcies from the `requirements.txt` file.
 3. Installed python packages:
-    * `rope` - Used by VS code to refactor code 
+    * `rope` - Used by VS code to refactor code
     * `pylint` - for lint checks on python files
 4. It also contains a nodejs `package.json` file and nodejs installed on the dev container.
      * It contains the npm script to run and watch the module code while development.
