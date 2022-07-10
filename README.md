@@ -3,7 +3,7 @@
 |              |                                                                  |
 | ------------ | ---------------------------------------------------------------- |
 | name         | Python Input Module Boilerplate                             |
-| version      | v2.0.0                                                           |
+| version      | v1.0.0                                                           |
 | GitHub       | [python-input-module-boilerplate](https://github.com/weeve-modules/python-ingress-module-boilerplate) |
 | authors      | Jakub Grzelak, Nithin Saai                                       |
 
