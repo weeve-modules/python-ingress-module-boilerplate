@@ -1,11 +1,11 @@
 version: "3.0"
 services:
-  boilerplate:
+  data-simulator:
     build:
       context: ../
       dockerfile: docker/Dockerfile
     environment:
-      MODULE_NAME: "boilerplate"
+      MODULE_NAME: "data-simulator"
       MODULE_TYPE: "Input"
       EGRESS_URLS: "https://testdockercompose.free.beeceptor.com"
     ports:
