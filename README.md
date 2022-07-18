@@ -1,4 +1,4 @@
-# Python Input Module Boilerplate
+# I2C Input
 
 |              |                                                                  |
 | ------------ | ---------------------------------------------------------------- |
@@ -20,10 +20,10 @@
   - [Dependencies](#dependencies)
 ***
 
-## Description 
+## Description
 
 This is a Python Input Boilerplate module and it serves as a starting point for developers to build input modules for weeve platform and data services.
-Navigate to [As a module developer](#as-a-module-developer) to learn how to use this module. You can also explore our weeve documentation on [weeve Modules](https://docs.weeve.engineering/concepts/edge-applications/weeve-modules) and [module tutorials](https://docs.weeve.engineering/guides/how-to-create-a-weeve-module) to learn more details. 
+Navigate to [As a module developer](#as-a-module-developer) to learn how to use this module. You can also explore our weeve documentation on [weeve Modules](https://docs.weeve.engineering/concepts/edge-applications/weeve-modules) and [module tutorials](https://docs.weeve.engineering/guides/how-to-create-a-weeve-module) to learn more details.
 
 ## Directory Structure
 
