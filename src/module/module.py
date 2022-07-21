@@ -24,9 +24,10 @@ def module_main():
     while True:
         # incoming i2c byte from slave
         if str(getenv('DATA_TYPE')) == "byte" :
-            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')) , 0)
-            byte_i2c_data={'i2cData': str(byte_i2c) }
-            print("I2C DATA byte  ",byte_i2c_data)
+            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), 0)
+            byte_i2c_data = {"i2cData": byte_i2c }
+            print("I2C byte :  ",byte_i2c_data)
+            # send data to the next module
             send_error = send_data(byte_i2c_data)
 
             if send_error:
@@ -36,8 +37,8 @@ def module_main():
          # incoming i2c word from slave
         if str(getenv('DATA_TYPE')) == "word" :
             word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), 0)
-            word_i2c_data={'i2cData': str(word_i2c) }
-            print("word  ",word_i2c_data)
+            word_i2c_data = {"i2cData": word_i2c }
+            print("I2C word :  ",word_i2c_data)
             # send data to the next module
             send_error = send_data(word_i2c_data)
 
