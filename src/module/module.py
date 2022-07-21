@@ -5,37 +5,44 @@ Data inputting should happen here.
 Edit this file to implement your module.
 """
 
+from os import getenv
 from logging import getLogger
 from api.send_data import send_data
-
+import smbus2 as smbus
+from time import sleep
+I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
-
 
 def module_main():
     """
     Implements module's main logic for inputting data.
     Function description should not be modified.
     """
-
     log.debug("Inputting data...")
 
-    try:
-        # YOUR CODE HERE
-        # ----------------------------------------------------------------
 
-        # input_data are data received by the module
-        input_data = None
+    while True:
+        # incoming i2c byte from slave
+        if str(getenv('DATA_TYPE')) == "byte" :
+            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')) , 0)
+            byte_i2c_data={'i2cData': str(byte_i2c) }
+            print("I2C DATA byte  ",byte_i2c_data)
+            send_error = send_data(byte_i2c_data)
 
+            if send_error:
+                log.error(send_error)
+            else:
+                log.debug("Data sent sucessfully.")
+         # incoming i2c word from slave
+        if str(getenv('DATA_TYPE')) == "word" :
+            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), 0)
+            word_i2c_data={'i2cData': str(word_i2c) }
+            print("word  ",word_i2c_data)
+            # send data to the next module
+            send_error = send_data(word_i2c_data)
 
-        # ----------------------------------------------------------------
-
-        # send data to the next module
-        send_error = send_data(input_data)
-
-        if send_error:
-            log.error(send_error)
-        else:
-            log.debug("Data sent sucessfully.")
-
-    except Exception as e:
-        log.error(f"Exception in the module business logic: {e}")
+            if send_error:
+                log.error(send_error)
+            else:
+                log.debug("Data sent sucessfully.")
+        sleep(2)
