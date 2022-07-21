@@ -65,9 +65,9 @@ Output of this module is:
 * JSON body single object, example:
 byte example :
 ```json
-{'i2cData': 119}
+{"i2cData": 119}
 ```
 word example :
 ```json
- {'i2cData': 65481}
+ {"i2cData": 65481}
 ```
