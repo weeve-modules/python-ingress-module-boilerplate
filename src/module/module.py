@@ -45,4 +45,4 @@ def module_main():
                 log.error(send_error)
             else:
                 log.debug("Data sent sucessfully.")
-        sleep(2)
+        sleep(int(getenv('PERIOD')))
