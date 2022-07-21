@@ -1,12 +1,12 @@
-# I2C-input
+# I2C input
 
-|              |                                                                                           |
-| ------------ | ------------------------------------------------------------------------------------------|
-| name         | i2c input                                                                |
-| version      | v1.0.0                                                                                    |
-| docker image | [weevenetwork/i2c-input](https://linktodockerhub/i2c-input) |
-| tags         | Python, Flask, Docker, Weeve                                                              |
-| authors      | Ghassen barbouchi                                                                         |
+|              |                                                               |
+| ------------ | --------------------------------------------------------------|
+| name         | i2c input                                                     |
+| version      | v1.0.0                                                        |
+| docker image | [weevenetwork/i2c-input](https://linktodockerhub/i2c-input)   |
+| tags         | Python, Flask, Docker, Weeve                                  |
+| authors      | Ghassen barbouchi                                             |
 
 ***
 ## Table of Content
@@ -50,7 +50,7 @@ Other features required for establishing the inter-container communication betwe
 | Environment Variables | type   | Description                                    |
 | --------------------- | ------ | ---------------------------------------------- |
 | MODULE_NAME           | string | Name of the module                             |
-| MODULE_TYPE           | string | Type of the module (Input, Processing, Output)  |
+| MODULE_TYPE           | string | Type of the module (Input, Processing, Output) |
 | EGRESS_URLS           | string | HTTP ReST endpoint for the next module         |
 
 ## Dependencies
@@ -63,10 +63,11 @@ smbus2
 Output of this module is:
 
 * JSON body single object, example:
-
-```json
 byte example :
+```json
 {'i2cData': 119}
+```
 word example :
+```json
  {'i2cData': 65481}
 ```
