@@ -4,12 +4,13 @@ Data inputting should happen here.
 
 Edit this file to implement your module.
 """
-
-from os import getenv
 from logging import getLogger
-from api.send_data import send_data
-import smbus2 as smbus
+from os import getenv
 from time import sleep
+from api.send_data import send_data
+from smbus2 import smbus2 as smbus
+
+OFFSET = 0
 I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
 
@@ -18,13 +19,13 @@ def module_main():
     Implements module's main logic for inputting data.
     Function description should not be modified.
     """
-    log.debug("Inputting data...")
 
+    log.debug("Inputting data...")
 
     while True:
         # incoming i2c byte from slave
         if str(getenv('DATA_TYPE')) == "byte" :
-            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), 0)
+            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), OFFSET)
             byte_i2c_data = {"i2cData": byte_i2c }
             print("I2C byte :  ",byte_i2c_data)
             # send data to the next module
@@ -36,7 +37,7 @@ def module_main():
                 log.debug("Data sent sucessfully.")
          # incoming i2c word from slave
         if str(getenv('DATA_TYPE')) == "word" :
-            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), 0)
+            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), OFFSET)
             word_i2c_data = {"i2cData": word_i2c }
             print("I2C word :  ",word_i2c_data)
             # send data to the next module

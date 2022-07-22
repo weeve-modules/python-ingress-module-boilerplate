@@ -11,7 +11,7 @@
 ***
 ## Table of Content
 
-- [I2C-ingress](#i2c-input)
+- [i2c-input](#i2c-input)
   - [Table of Content](#table-of-content)
   - [Description](#description)
      - [Features](#features)
@@ -36,12 +36,12 @@ The user should ensure that the chosen hardware i2c interface,which the slave or
 ### Module Specific
 The following module configurations can be provided in a data service designer section on weeve platform:
 
-| Name                | Environment Variables | Type    | Description                                               |
-|---------------------|-----------------------|---------|-----------------------------------------------------------|
-| I2C interface number| I2C_INTERFACE_NUMBER  | integer | Exemple the number of this interface "/dev/i2c-1" is 1    |
-| Slave Address       | SLAVE_ADDR            | integer | Exemple 10 (in hex '0xa')                                 |
-| Data Type           | DATA_TYPE             | string  | The data type which a sensor use it 'byte' or 'word'      |
-| Period              | PERIOD                | integer | The period between every two successives data receptions  |
+| Name                | Environment Variables | Type    | Description                                                   |
+|---------------------|-----------------------|---------|---------------------------------------------------------------|
+| I2C interface number| I2C_INTERFACE_NUMBER  | integer | Exemple : the number of this interface "/dev/i2c-1" is 1      |
+| Slave Address       | SLAVE_ADDR            | integer | Exemple : 10 (in hex '0xa')                                   |
+| Data Type           | DATA_TYPE             | string  | The data type which a sensor use it 'byte' or 'word'          |
+| Period              | PERIOD                | integer | The period between every two successives data receptions      |
 
 Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
 
@@ -69,5 +69,5 @@ byte example :
 ```
 word example :
 ```json
- {"i2cData": 65481}
+{"i2cData": 65481}
 ```

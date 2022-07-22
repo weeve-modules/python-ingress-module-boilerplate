@@ -1,6 +1,6 @@
 displayName: 'i2c input'       # Display name for the module that will be displayed in the UI.
 moduleName: 'i2c-input'        # Module name that will be used to reference the module, and uniquely identify the module and their versions.
-description: 'This is module i2c input description.'       # Module description that will be displayed in the UI.
+description: 'This module allows users to read data from 1 I2C device and progress it to the next module.'       # Module description that will be displayed in the UI.
 versionName: 'v1.0.0'          # Module version name that will be used to reference the module version, and uniquely identify the module version with a common name.
 isPublic: true                 # Boolean value that indicates if the module is Public or Private.
 categories:                    # Array of category that will be used to group the module in the UI.
@@ -11,11 +11,11 @@ image:
   name: 'weevenetwork/i2c-input'     # Image name from the docker registry.
   tag: 'latest'                      # Image tag from the docker registry.
   homepage: 'https://hub.docker.com/weevenetwork/i2c-input'  # Image homepage from the docker registry.
-repository: 'https://github.com/weeve-modules/I2c-input'     # Repository URL to source code.
+repository: 'https://github.com/weeve-modules/i2c-input'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
   - name: I2C interface number          # name of the field to be displayed on the UI.
     key: I2C_INTERFACE_NUMBER           # key to set in the environment variables.
-    description: I2c interface connected to the slave      # Description/helper text for the field.
+    description: I2C interface connected to the slave      # Description/helper text for the field.
     value: ''                           # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                         # Options for the field if it is a select or multiple select. An array of string options
@@ -42,7 +42,7 @@ envs:                                   # Array of environment variables that wi
         value:                          # value of the dependency
   - name: Period             # name of the field to be displayed on the UI.
     key: PERIOD                     # key to set in the environment variables.
-    description: the i2c interface read data every choosen period (in seconds)      # Description/helper text for the field.
+    description: The I2C interface read data every choosen period (in seconds)      # Description/helper text for the field.
     value: ''                           # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                         # Options for the field if it is a select or multiple select. An array of string options
