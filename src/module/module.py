@@ -10,7 +10,7 @@ from time import sleep
 from api.send_data import send_data
 from smbus2 import smbus2 as smbus
 
-OFFSET = 8
+OFFSET = 0
 I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
 
