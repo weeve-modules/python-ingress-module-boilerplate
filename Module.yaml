@@ -4,13 +4,12 @@ description: 'This module allows users to read data from 1 I2C device and progre
 versionName: 'v1.0.0'          # Module version name that will be used to reference the module version, and uniquely identify the module version with a common name.
 isPublic: true                 # Boolean value that indicates if the module is Public or Private.
 categories:                    # Array of category that will be used to group the module in the UI.
-  - 'CATEGORY_1'
-  - 'CATEGORY_2'
+  - 'Ingress'
 type: 'Input'      # Module type (Input, Processing, Output) that will be used to group the module in the UI.
 image:
   name: 'weevenetwork/i2c-input'     # Image name from the docker registry.
   tag: 'latest'                      # Image tag from the docker registry.
-  homepage: 'https://hub.docker.com/weevenetwork/i2c-input'  # Image homepage from the docker registry.
+  homepage: 'https://hub.docker.com/r/weevenetwork/i2c-input'  # Image homepage from the docker registry.
 repository: 'https://github.com/weeve-modules/i2c-input'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
   - name: I2C interface number          # name of the field to be displayed on the UI.
@@ -52,10 +51,6 @@ envs:                                   # Array of environment variables that wi
 ports:                                  # Array of ports that will be exposed by the module.
   - container: 8080                     # Port number from the container.
     host: 8080                          # Port number to map on the host.
-mounts:
-  - container: '/data'                  # Mount path from the container.
-    host: '/data'                       # Mount path to map on the host.
-tags:                                   # Array of tags.
   - 'Python'
   - 'Input'
   - 'i2c-input'

@@ -1,12 +1,12 @@
 # I2C input
 
-|              |                                                               |
-| ------------ | --------------------------------------------------------------|
-| name         | i2c input                                                     |
-| version      | v1.0.0                                                        |
-| docker image | [weevenetwork/i2c-input](https://linktodockerhub/i2c-input)   |
-| tags         | Python, Flask, Docker, Weeve                                  |
-| authors      | Ghassen barbouchi                                             |
+|              |                                                                             |
+| ------------ | ----------------------------------------------------------------------------|
+| name         | i2c input                                                                   |
+| version      | v1.0.0                                                                      |
+| docker image | [weevenetwork/i2c-input](https://hub.docker.com/r/weevenetwork/i2c-input)   |
+| tags         | Python, Flask, Docker, Weeve                                                |
+| authors      | Ghassen barbouchi                                                           |
 
 ***
 ## Table of Content
@@ -38,8 +38,8 @@ The following module configurations can be provided in a data service designer s
 
 | Name                | Environment Variables | Type    | Description                                                   |
 |---------------------|-----------------------|---------|---------------------------------------------------------------|
-| I2C interface number| I2C_INTERFACE_NUMBER  | integer | Exemple : the number of this interface "/dev/i2c-1" is 1      |
-| Slave Address       | SLAVE_ADDR            | integer | Exemple : 10 (in hex '0xa')                                   |
+| I2C interface number| I2C_INTERFACE_NUMBER  | integer | Example : the number of this interface "/dev/i2c-1" is 1      |
+| Slave Address       | SLAVE_ADDR            | integer | Example : 10 (in hex '0xa')                                   |
 | Data Type           | DATA_TYPE             | string  | The data type which a sensor use it 'byte' or 'word'          |
 | Period              | PERIOD                | integer | The period between every two successives data receptions      |
 
@@ -63,6 +63,7 @@ smbus2
 Output of this module is:
 
 * JSON body single object, example:
+
 byte example :
 ```json
 {"i2cData": 119}
