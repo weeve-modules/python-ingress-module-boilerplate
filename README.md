@@ -44,6 +44,7 @@ The following module configurations can be provided in a data service designer s
 | Data Type           | DATA_TYPE             | string  | The data type which a sensor use it 'byte' or 'word'          |
 | Polling Period      | PERIOD                | integer | The period between every two successives data receptions      |
 | Offset              | Offset                | integer | specify the address (offset) inside the EEPROM                |
+
 Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
 
 ### Set by the weeve Agent on the edge-node
