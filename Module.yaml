@@ -52,7 +52,7 @@ envs:                                   # Array of environment variables that wi
     key: OFFSET                         # key to set in the environment variables.
     description: Offset of a value (used in case a sensor provide multiple values)     # Description/helper text for the field.
     value: 0                            # Value to be set in the environment variables.
-    type: 'CSV'                         # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+    type: number                        # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                         # Options for the field if it is a select or multiple select. An array of string options
     dependencies: []                    # List of dependencies for the field. This field is only displayed if all the dependencies are met. If
       - key:                            # key of the dependency
