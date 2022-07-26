@@ -10,11 +10,11 @@ from time import sleep
 from api.send_data import send_data
 from smbus2 import smbus2 as smbus
 
-OFFSET = 0
 I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
 
 def module_main():
+    #Device_Address=int(getenv('SLAVE_ADDR'))
     """
     Implements module's main logic for inputting data.
     Function description should not be modified.
@@ -24,8 +24,8 @@ def module_main():
     while True:
         # incoming i2c byte from slave
         if str(getenv('DATA_TYPE')) == "byte" :
-            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), OFFSET)
-            byte_i2c_data = {"i2cData": byte_i2c }
+            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
+            byte_i2c_data = {"i2cData": byte_i2c}
             print("I2C byte :  ",byte_i2c_data)
             # send data to the next module
             send_error = send_data(byte_i2c_data)
@@ -35,8 +35,8 @@ def module_main():
             else:
                 log.debug("Data sent sucessfully.")
          # incoming i2c word from slave
-        if str(getenv('DATA_TYPE')) == "word" :
-            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), OFFSET)
+        elif str(getenv('DATA_TYPE')) == "word" :
+            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
             word_i2c_data = {"i2cData": word_i2c }
             print("I2C word :  ",word_i2c_data)
             # send data to the next module

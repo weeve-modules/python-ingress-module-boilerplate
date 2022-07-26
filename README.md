@@ -30,6 +30,7 @@ The user should ensure that the chosen hardware i2c interface,which the slave or
 ### Features
 1. Open the connected i2c interface.
 2. Read an i2c slave data using the slave address for each period.
+3. Forward the data to the next module.
 
 ## Environment Variables
 
@@ -41,8 +42,8 @@ The following module configurations can be provided in a data service designer s
 | I2C interface number| I2C_INTERFACE_NUMBER  | integer | Example : the number of this interface "/dev/i2c-1" is 1      |
 | Slave Address       | SLAVE_ADDR            | integer | Example : 10 (in hex '0xa')                                   |
 | Data Type           | DATA_TYPE             | string  | The data type which a sensor use it 'byte' or 'word'          |
-| Period              | PERIOD                | integer | The period between every two successives data receptions      |
-
+| Polling Period      | PERIOD                | integer | The period between every two successives data receptions      |
+| Offset              | Offset                | integer | specify the address (offset) inside the EEPROM                |
 Other features required for establishing the inter-container communication between modules in a data service are set by weeve agent.
 
 ### Set by the weeve Agent on the edge-node
