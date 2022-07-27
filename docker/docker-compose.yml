@@ -5,7 +5,7 @@ services:
       context: ../
       dockerfile: docker/Dockerfile
     environment:
-      MODULE_NAME: "i2c-input"
+      MODULE_NAME: "boilerplate"
       MODULE_TYPE: "Input"
       EGRESS_URLS: "https://testdockercompose.free.beeceptor.com"
     ports:
