@@ -8,7 +8,7 @@ categories:                    # Array of category that will be used to group th
 type: 'Input'      # Module type (Input, Processing, Output) that will be used to group the module in the UI.
 image:
   name: 'weevenetwork/i2c-input'     # Image name from the docker registry.
-  tag: 'latest'                      # Image tag from the docker registry.
+  tag: 'v1.0.0'                      # Image tag from the docker registry.
   homepage: 'https://hub.docker.com/r/weevenetwork/i2c-input'  # Image homepage from the docker registry.
 repository: 'https://github.com/weeve-modules/i2c-input'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
@@ -19,8 +19,6 @@ envs:                                   # Array of environment variables that wi
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                         # Options for the field if it is a select or multiple select. An array of string options
     dependencies: []                    # List of dependencies for the field. This field is only displayed if all the dependencies are met. If
-      - key:                            # key of the dependency
-        value:                          # value of the dependency
   - name: Data type                     # name of the field to be displayed on the UI.
     key: DATA_TYPE                      # key to set in the environment variables.
     description: byte or word           # Description/helper text for the field.
@@ -37,8 +35,6 @@ envs:                                   # Array of environment variables that wi
     type: 'number'                       # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                          # Options for the field if it is a select or multiple select. An array of string options
     dependencies: []                     # List of dependencies for the field. This field is only displayed if all the dependencies are met. If
-      - key:                             # key of the dependency
-        value:                           # value of the dependency
   - name: Polling Period                 # name of the field to be displayed on the UI.
     key: PERIOD                          # key to set in the environment variables.
     description: The I2C interface read data every choosen period (in seconds)      # Description/helper text for the field.
@@ -46,8 +42,6 @@ envs:                                   # Array of environment variables that wi
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                         # Options for the field if it is a select or multiple select. An array of string options
     dependencies: []                    # List of dependencies for the field. This field is only displayed if all the dependencies are met. If
-      - key:                            # key of the dependency
-        value:                          # value of the dependency
   - name: Offset (in decimal)           # name of the field to be displayed on the UI.
     key: OFFSET                         # key to set in the environment variables.
     description: Offset of a value (used in case a sensor provide multiple values)     # Description/helper text for the field.
@@ -55,11 +49,10 @@ envs:                                   # Array of environment variables that wi
     type: number                        # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
     options: []                         # Options for the field if it is a select or multiple select. An array of string options
     dependencies: []                    # List of dependencies for the field. This field is only displayed if all the dependencies are met. If
-      - key:                            # key of the dependency
-        value:                          # value of the dependency
 ports:                                  # Array of ports that will be exposed by the module.
   - container: 8080                     # Port number from the container.
     host: 8080                          # Port number to map on the host.
+tags:
   - 'Python'
   - 'Input'
   - 'i2c-input'
