@@ -46,4 +46,4 @@ def module_main():
                 log.error(send_error)
             else:
                 log.debug("Data sent sucessfully.")
-        sleep(int(getenv('PERIOD')))
+        sleep(int(getenv('PERIOD'))/1000)
