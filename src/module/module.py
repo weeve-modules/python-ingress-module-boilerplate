@@ -10,6 +10,7 @@ from time import sleep
 from api.send_data import send_data
 from smbus2 import smbus2 as smbus
 
+ONE_THOUSAND = 1000
 I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
 
@@ -46,4 +47,4 @@ def module_main():
                 log.error(send_error)
             else:
                 log.debug("Data sent sucessfully.")
-        sleep(int(getenv('PERIOD'))/1000)
+        sleep(int(getenv('PERIOD'))/ONE_THOUSAND)
