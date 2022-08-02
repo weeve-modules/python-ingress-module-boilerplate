@@ -1,6 +1,6 @@
-displayName: 'i2c input'       # Display name for the module that will be displayed in the UI.
+displayName: 'I2C Input'       # Display name for the module that will be displayed in the UI.
 moduleName: 'i2c-input'        # Module name that will be used to reference the module, and uniquely identify the module and their versions.
-description: 'This module allows users to read data from 1 I2C device and progress it to the next module.'       # Module description that will be displayed in the UI.
+description: 'This module allows users to read data from a single I2C slave register and forward it to the next module.'       # Module description that will be displayed in the UI.
 versionName: 'v1.0.0'          # Module version name that will be used to reference the module version, and uniquely identify the module version with a common name.
 isPublic: true                 # Boolean value that indicates if the module is Public or Private.
 categories:                    # Array of category that will be used to group the module in the UI.
@@ -25,27 +25,24 @@ envs:                                   # Array of environment variables that wi
     options:
       - byte
       - word
-  - name: I2C slave address (in decimal) # name of the field to be displayed on the UI.
+  - name: I2C slave address  # name of the field to be displayed on the UI.
     key: SLAVE_ADDR                      # key to set in the environment variables.
-    description: I2c slave address       # Description/helper text for the field.
+    description: I2C slave address (in decimal)     # Description/helper text for the field.
     value: ''                            # Value to be set in the environment variables.
     type: 'number'                       # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
-  - name: Polling Period                 # name of the field to be displayed on the UI.
-    key: PERIOD                          # key to set in the environment variables.
-    description: The I2C interface read data every choosen period (in seconds)      # Description/helper text for the field.
-    value: ''                           # Value to be set in the environment variables.
-    type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
-  - name: Offset (in decimal)           # name of the field to be displayed on the UI.
+  - name: Offset          # name of the field to be displayed on the UI.
     key: OFFSET                         # key to set in the environment variables.
-    description: Offset of a value (used in case a sensor provide multiple values)     # Description/helper text for the field.
-    value: '0'                            # Value to be set in the environment variables.
-    type: 'number'                        # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
-ports:                                  # Array of ports that will be exposed by the module.
-  - container: 8080                     # Port number from the container.
-    host: 8080                          # Port number to map on the host.
-tags:
+    description: Offset in case the sensor has more than one registers available (in decimal)       # Description/helper text for the field.
+    value: 0                            # Value to be set in the environment variables.
+    type: number                        # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+  - name: Polling Period               # name of the field to be displayed on the UI.
+    key: PERIOD                          # key to set in the environment variables.
+    description: The I2C interface read data every choosen period (in milliseconds)       # Description/helper text for the field.
+    value: 1000                           # Value to be set in the environment variables.
+    type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+tags:                                   # Array of tags.
   - 'Python'
   - 'Input'
   - 'i2c-input'
   - 'i2c-input 1.0.0'
-icon: 'https://icons-020-demo.s3.eu-central-1.amazonaws.com/mi_ic2_input'    # Icon URL that will be displayed in the UI.
+icon: 'https://icons-020-demo.s3.eu-central-1.amazonaws.com/mi_I2C_input.png'    # Icon URL that will be displayed in the UI.
