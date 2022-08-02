@@ -40,6 +40,7 @@ envs:                                   # Array of environment variables that wi
     description: The I2C interface read data every choosen period (in milliseconds)       # Description/helper text for the field.
     value: ''                           # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+
   - 'Python'
   - 'Input'
   - 'i2c-input'
