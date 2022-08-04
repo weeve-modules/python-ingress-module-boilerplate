@@ -11,7 +11,7 @@ from api.send_data import send_data
 from smbus2 import smbus2 as smbus
 
 MILL_PER_SEC = 1000
-I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
+I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE')[-1]))
 log = getLogger("module")
 
 def module_main():
@@ -20,7 +20,7 @@ def module_main():
     Implements module's main logic for inputting data.
     Function description should not be modified.
     """
-
+    
     log.debug("Inputting data...")
     while True:
         # incoming i2c byte from slave
