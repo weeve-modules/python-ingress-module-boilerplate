@@ -22,6 +22,7 @@ def module_main():
     """
     
     log.debug("Inputting data...")
+    print(int(getenv('I2C_INTERFACE')[-1]))
     while True:
         # incoming i2c byte from slave
         if str(getenv('DATA_TYPE')) == "byte" :
