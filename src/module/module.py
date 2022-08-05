@@ -15,7 +15,6 @@ I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
 
 def module_main():
-    #Device_Address=int(getenv('SLAVE_ADDR'))
     """
     Implements module's main logic for inputting data.
     Function description should not be modified.
