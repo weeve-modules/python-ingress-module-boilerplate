@@ -12,10 +12,15 @@ image:
   homepage: 'https://hub.docker.com/r/weevenetwork/i2c-input'  # Image homepage from the docker registry.
 repository: 'https://github.com/weeve-modules/i2c-input'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
-  - name: I2C interface number          # name of the field to be displayed on the UI.
+  - name: I2C interface path         # name of the field to be displayed on the UI.
+    key: I2C_INTERFACE_PATH           # key to set in the environment variables.
+    description: I2C path of the connected interface to the slave # Description/helper text for the field.
+    value: '/dev/i2c-1'                           # Value to be set in the environment variables.
+    type: 'text'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+  - name: I2C interface number         # name of the field to be displayed on the UI.
     key: I2C_INTERFACE_NUMBER           # key to set in the environment variables.
-    description: I2C interface connected to the slave # Description/helper text for the field.
-    value: ''                           # Value to be set in the environment variables.
+    description: The number of the I2C interface  # Description/helper text for the field.
+    value: 1                         # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
   - name: Data type                     # name of the field to be displayed on the UI.
     key: DATA_TYPE                      # key to set in the environment variables.
@@ -38,8 +43,10 @@ envs:                                   # Array of environment variables that wi
   - name: Polling Period               # name of the field to be displayed on the UI.
     key: PERIOD                          # key to set in the environment variables.
     description: The I2C interface read data every choosen period (in milliseconds)       # Description/helper text for the field.
-    value: 1000                           # Value to be set in the environment variables.
+    value: 200                           # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+envDevices:
+  - I2C_INTERFACE_PATH
 tags:                                   # Array of tags.
   - 'Python'
   - 'Input'
