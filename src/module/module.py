@@ -15,7 +15,6 @@ I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
 log = getLogger("module")
 
 def module_main():
-    #Device_Address=int(getenv('SLAVE_ADDR'))
     """
     Implements module's main logic for inputting data.
     Function description should not be modified.
@@ -35,7 +34,7 @@ def module_main():
                 log.error(send_error)
             else:
                 log.debug("Data sent sucessfully.")
-         # incoming i2c word from slave
+        # incoming i2c word from slave
         elif str(getenv('DATA_TYPE')) == "word" :
             word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
             word_i2c_data = {"i2cData": word_i2c }
