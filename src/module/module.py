@@ -24,7 +24,7 @@ def module_main():
     while True:
         # incoming i2c byte from slave
         if str(getenv('DATA_TYPE')) == "byte" :
-            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
+            byte_i2c = I2Cbus.read_byte_data(getenv('SLAVE_ADDR'), getenv('OFFSET'))
             byte_i2c_data = {"i2cData": byte_i2c}
             print("I2C byte :  ",byte_i2c_data)
             # send data to the next module
@@ -34,9 +34,9 @@ def module_main():
                 log.error(send_error)
             else:
                 log.debug("Data sent sucessfully.")
-        # incoming i2c word from slave
+         # incoming i2c word from slave
         elif str(getenv('DATA_TYPE')) == "word" :
-            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
+            word_i2c = I2Cbus.read_word_data(getenv('SLAVE_ADDR'), getenv('OFFSET'))
             word_i2c_data = {"i2cData": word_i2c }
             print("I2C word :  ",word_i2c_data)
             # send data to the next module
