@@ -20,7 +20,7 @@ envs:                                   # Array of environment variables that wi
   - name: I2C interface number         # name of the field to be displayed on the UI.
     key: I2C_INTERFACE_NUMBER           # key to set in the environment variables.
     description: The number of the I2C interface  # Description/helper text for the field.
-    value: "1"                         # Value to be set in the environment variables.
+    value: 1                         # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
   - name: Data type                     # name of the field to be displayed on the UI.
     key: DATA_TYPE                      # key to set in the environment variables.
