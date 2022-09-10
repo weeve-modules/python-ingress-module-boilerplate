@@ -11,7 +11,7 @@ image:
   name: 'weevenetwork/module-boilerplate'     # Image name from the docker registry.
   tag: 'latest'                               # Image tag from the docker registry.
   homepage: 'https://hub.docker.com/weevenetwork/module-boilerplate'      # Image homepage from the docker registry.
-repository: 'https://github.com/weeve-modules/python-ingress-module-boilerplate'     # Repository URL to source code.
+repository: 'https://github.com/weeve-modules/python-input-module-boilerplate'     # Repository URL to source code.
 envs:                                   # Array of environment variables that will be used to configure the module. Also used to show related fields on the UI.
   - name: Setting 1                   # name of the field to be displayed on the UI.
     key: ENVIRONMENT_1                # key to set in the environment variables.
