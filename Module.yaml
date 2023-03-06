@@ -17,11 +17,15 @@ envs:                                   # Array of environment variables that wi
     description: Local path to I2C device # Description/helper text for the field.
     value: '/dev/i2c-1'                           # Value to be set in the environment variables.
     type: 'text'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+    options: []
+    dependencies: []
   - name: I2C interface number         # name of the field to be displayed on the UI.
     key: I2C_INTERFACE_NUMBER           # key to set in the environment variables.
     description: The number of the I2C interface  # Description/helper text for the field.
     value: '1'                         # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+    options: []
+    dependencies: []
   - name: Data type                     # name of the field to be displayed on the UI.
     key: DATA_TYPE                      # key to set in the environment variables.
     description: Read from the device byte- or wordwise           # Description/helper text for the field.
@@ -30,21 +34,28 @@ envs:                                   # Array of environment variables that wi
     options:
       - byte
       - word
+    dependencies: []
   - name: I2C slave address  # name of the field to be displayed on the UI.
     key: SLAVE_ADDR                      # key to set in the environment variables.
     description: I2C slave address (in decimal)     # Description/helper text for the field.
     value: ''                            # Value to be set in the environment variables.
     type: 'number'                       # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+    options: []
+    dependencies: []
   - name: Offset          # name of the field to be displayed on the UI.
     key: OFFSET                         # key to set in the environment variables.
     description: Offset in case the sensor has more than one register available (in decimal)       # Description/helper text for the field.
     value: '0'                            # Value to be set in the environment variables.
     type: number                        # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+    options: []
+    dependencies: []
   - name: Polling Period               # name of the field to be displayed on the UI.
     key: PERIOD                          # key to set in the environment variables.
     description: Polling period (in milliseconds)       # Description/helper text for the field.
     value: '200'                           # Value to be set in the environment variables.
     type: 'number'                      # Type of the field. Possible values are: ['text', 'select', 'boolean', 'date', 'time', 'dateTime-local', 'number', 'multiple', 'CSV', 'file']
+    options: []
+    dependencies: []
 ports: []
 envPorts: []
 mounts: []
