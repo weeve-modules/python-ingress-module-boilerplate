@@ -11,39 +11,30 @@ from api.send_data import send_data
 from smbus2 import smbus2 as smbus
 
 MILL_PER_SEC = 1000
-I2Cbus = smbus.SMBus(int(getenv('I2C_INTERFACE_NUMBER')))
+
 log = getLogger("module")
 
+I2Cbus = smbus.SMBus(int(getenv("I2C_INTERFACE_NUMBER")))
+
+if getenv("DATA_TYPE") != "byte" and getenv("DATA_TYPE") != "word":
+    log.error("Invalid data type. Must be 'byte' or 'word'.")
+    exit(1)
+read_func = getattr(I2Cbus, "read_" + str(getenv("DATA_TYPE")) + "_data")
+
+
 def module_main():
-    """
-    Implements module's main logic for inputting data.
-    Function description should not be modified.
-    """
+    log.info("Reading data from I2C bus " + getenv("DATA_TYPE") + "wise...")
 
-    log.debug("Inputting data...")
     while True:
-        # incoming i2c byte from slave
-        if str(getenv('DATA_TYPE')) == "byte" :
-            byte_i2c = I2Cbus.read_byte_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
-            byte_i2c_data = {"i2cData": byte_i2c}
-            print("I2C byte :  ",byte_i2c_data)
-            # send data to the next module
-            send_error = send_data(byte_i2c_data)
+        data = read_func(int(getenv("SLAVE_ADDR")), int(getenv("OFFSET")))
+        log.debug("Read data: ", data)
 
-            if send_error:
-                log.error(send_error)
-            else:
-                log.debug("Data sent sucessfully.")
-         # incoming i2c word from slave
-        elif str(getenv('DATA_TYPE')) == "word" :
-            word_i2c = I2Cbus.read_word_data(int(getenv('SLAVE_ADDR')), int(getenv('OFFSET')))
-            word_i2c_data = {"i2cData": word_i2c }
-            print("I2C word :  ",word_i2c_data)
-            # send data to the next module
-            send_error = send_data(word_i2c_data)
+        # send data to the next module
+        send_error = send_data({"i2cData": data})
 
-            if send_error:
-                log.error(send_error)
-            else:
-                log.debug("Data sent sucessfully.")
-        sleep(int(getenv('PERIOD'))/MILL_PER_SEC)
+        if send_error:
+            log.error(send_error)
+        else:
+            log.debug("Data sent sucessfully.")
+
+        sleep(int(getenv("PERIOD")) / MILL_PER_SEC)
